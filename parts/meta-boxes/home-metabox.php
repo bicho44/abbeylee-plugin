@@ -5,7 +5,7 @@ Post Type: page,post,events,tvvideo,faculty,classes
 Description: Options to use the post at Home Page
 Priority: high
 Order: 3
-Collapse: false
+Collapse: true
 Context: side
 */
 
@@ -16,7 +16,7 @@ piklist('field',
     , 'field' => 'imgd_destacado'
     , 'value' => '0' // Sets default to Option 2
     , 'label' => __('Home Page', 'imgd')
-    , 'description' => __('Put this on the home Page', 'imgd')
+    , 'description' => __('Publish this post on the home Page', 'imgd')
     , 'attributes' => array(
         'class' => 'radio'
     )
@@ -31,8 +31,8 @@ piklist('field', array(
     'type' => 'text'
 ,'field' => 'imgd_destacado_title'
 ,'value' => ''
-,'label' => __('Promotional Title', 'imgd')
-,'help' => __('This is optional, and will be used at the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
+,'label' => __('Promotional Title (optional)', 'imgd')
+,'help' => __('This is optional, and will be used as the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
 ,'attributes' => array(
         'class' => 'regular-text'
     )
@@ -53,8 +53,9 @@ piklist('field', array(
     'type' => 'file'
     ,'field' => 'imgd_destacado_image' // Use these field to match WordPress featured images.
     ,'scope' => 'post_meta'
-    ,'label' => __('Promotional Image', 'imgd')
-    ,'options' => array(
+    ,'label' => __('Promotional Image (optional)', 'imgd')
+,'help' => __('Set the promotional Image to be used in the Home Page insted of the Feature Image.', 'imgd')
+,'options' => array(
             'title' => __('Image to be showed at Home Page', 'imgd')
             ,'modal_title' => __('Add Image', 'imgd')
             ,'button' => __('Add Image', 'imgd')
