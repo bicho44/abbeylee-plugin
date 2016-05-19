@@ -28,6 +28,17 @@ piklist('field',
     ));
 
 piklist('field', array(
+    'type' => 'text'
+,'field' => 'imgd_destacado_title'
+,'value' => 1
+,'label' => __('Promotional Title', 'imgd')
+,'help' => __('This is optional, and will be used at the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
+    )
+));
+
+piklist('field', array(
     'type' => 'number'
 ,'field' => 'imgd_destacado_order'
 ,'value' => 1

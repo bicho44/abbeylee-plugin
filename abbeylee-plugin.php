@@ -42,6 +42,25 @@ function imgd_plugin_init() {
 add_action('plugins_loaded', 'casino_plugin_init');
 
 
+/**
+ * Retrieve Image thumbnail ID.
+ *
+ * @since 2.9.0
+ * @since 4.4.0 `$post` can be a post ID or WP_Post object.
+ *
+ * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global `$post`.
+ * @param string $meta Meta data a buscar
+ * @return string|int Post thumbnail ID or empty string.
+ */
+function imgd_get_thumbnail_id( $post = null, $meta = 'imgd_image_slideshow' ) {
+    $post = get_post( $post );
+    if ( ! $post ) {
+        return '';
+    }
+    return get_post_meta( $post->ID, $meta , true );
+}
+
+
 
 /**
  * Get terms dropdown
