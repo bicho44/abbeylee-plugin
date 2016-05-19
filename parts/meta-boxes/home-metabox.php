@@ -1,11 +1,11 @@
 <?php
 /*
-Title: Preferencias para la Pagina Inicio
+Title: Home Page Preferences
 Post Type: page,post,events,tvvideo,faculty,classes
-Description: Opciones para decidir sobre la aparición de este item en la Página Principal
+Description: Options to use the post at Home Page
 Priority: high
 Order: 3
-Collapse: true
+Collapse: false
 Context: side
 */
 
@@ -26,3 +26,14 @@ piklist('field',
     , '1' => __('Yes','imgd')
     )
     ));
+
+piklist('field', array(
+    'type' => 'number'
+,'field' => 'imgd_destacado_order'
+,'value' => 1
+,'label' => __('Post Order', 'imgd')
+,'help' => __('Set the order where the post must be showed in the home page, the number must be 1 to 5 ', 'imgd')
+,'attributes' => array(
+        'class' => 'small-text'
+    )
+));
