@@ -16,7 +16,7 @@ piklist('field',
     , 'field' => 'imgd_destacado'
     , 'value' => '0' // Sets default to Option 2
     , 'label' => __('Home Page', 'imgd')
-    , 'description' => __('Publish this post on the home Page', 'imgd')
+    , 'help' => __('Publish this post on the home Page', 'imgd')
     , 'attributes' => array(
         'class' => 'radio'
     )
@@ -28,17 +28,6 @@ piklist('field',
     ));
 
 piklist('field', array(
-    'type' => 'text'
-,'field' => 'imgd_destacado_title'
-,'value' => ''
-,'label' => __('Promotional Title (optional)', 'imgd')
-,'help' => __('This is optional, and will be used as the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
-,'attributes' => array(
-        'class' => 'regular-text'
-    )
-));
-
-piklist('field', array(
     'type' => 'number'
 ,'field' => 'imgd_destacado_order'
 ,'value' => 1
@@ -46,6 +35,17 @@ piklist('field', array(
 ,'help' => __('Set the order where the post must be showed in the home page, the number must be 1 to 5 ', 'imgd')
 ,'attributes' => array(
         'class' => 'small-text'
+    )
+));
+
+piklist('field', array(
+    'type' => 'text'
+,'field' => 'imgd_destacado_title'
+,'value' => ''
+,'label' => __('Promotional Title (optional)', 'imgd')
+,'help' => __('This is optional, and will be used as the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
     )
 ));
 
