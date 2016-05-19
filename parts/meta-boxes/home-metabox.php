@@ -30,7 +30,7 @@ piklist('field',
 piklist('field', array(
     'type' => 'text'
 ,'field' => 'imgd_destacado_title'
-,'value' => 1
+,'value' => ''
 ,'label' => __('Promotional Title', 'imgd')
 ,'help' => __('This is optional, and will be used at the title in the Home Page, if is empty, the Home will use the Post Title', 'imgd')
 ,'attributes' => array(
@@ -47,4 +47,27 @@ piklist('field', array(
 ,'attributes' => array(
         'class' => 'small-text'
     )
+));
+
+piklist('field', array(
+    'type' => 'file'
+    ,'field' => 'imgd_destacado_image' // Use these field to match WordPress featured images.
+    ,'scope' => 'post_meta'
+    ,'label' => __('Promotional Image', 'imgd')
+    ,'options' => array(
+            'title' => __('Image to be showed at Home Page', 'imgd')
+            ,'modal_title' => __('Add Image', 'imgd')
+            ,'button' => __('Add Image', 'imgd')
+            ,'basic'=>true
+        ),
+        'validate' => array(
+            array(
+                'type' => 'limit'
+                ,'options' => array(
+                    'min' => 0
+                    ,'max' => 1
+                )
+            ,'message' => __('Limit 1 image', 'imgd')
+            )
+        )
 ));
