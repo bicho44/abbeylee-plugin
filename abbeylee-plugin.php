@@ -50,16 +50,53 @@ add_action('plugins_loaded', 'casino_plugin_init');
  *
  * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global `$post`.
  * @param string $meta Meta data a buscar
- * @return string|int Post thumbnail ID or empty string.
+ * @return string|int Meta ID or empty string.
  */
-function imgd_get_thumbnail_id( $post = null, $meta = 'imgd_image_slideshow' ) {
+function imgd_get_meta_id( $post = null, $meta = 'imgd_image_slideshow' ) {
+    
     $post = get_post( $post );
     if ( ! $post ) {
         return '';
     }
+    
     return get_post_meta( $post->ID, $meta , true );
 }
 
+
+function get_imgd_imagen_home($post, $meta='imgd_slideshow', $thumbsize='thumbnail', $posttype=""){
+
+    $imageID=array();
+    $path = "";
+
+    if ($meta=='') $meta='imgd_slideshow';
+
+    $post = get_post( $post );
+
+    if ( ! $post ) {
+        return '';
+    }
+
+    $imageID = get_post_meta( $post->ID, $meta, true );
+
+    //piklist::pre($imageID);
+
+    if (!empty($imageID)){
+        return wp_get_attachment_url($imageID, $thumbsize);
+
+    } else {
+
+        if($posttype!="") {
+            $imageID = get_post_meta($post->ID, $posttype);
+            if (!empty($imageID))
+                 return thumb($imageID[0]['path']);
+        }
+
+        if (has_post_thumbnail($post->ID)) {
+            return get_the_post_thumbnail_url($post->ID, $thumbsize);
+
+        }
+    }
+}
 
 
 /**
