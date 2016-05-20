@@ -120,7 +120,7 @@ function get_promo_title($post){
     }
 
     return $title;
-    
+
 }
 
 /**
@@ -153,22 +153,19 @@ function get_terms_dropdown($taxonomies, $args){
 */
 
 
-/*add_filter('piklist_admin_pages', 'imgd_casino_setting_pages');
-function imgd_casino_setting_pages($pages)
+add_filter('piklist_admin_pages', 'imgd_abbeylee_setting_pages');
+function imgd_abbeylee_setting_pages($pages)
 {
     $pages[] = array(
-        'page_title' => __('Abbey Lee Pref','imgd')
-    ,'menu_title' => __('Abbey Lee', 'imgd')
+        'page_title' => __('Abbey Lee Home Page Settings','imgd')
+    ,'menu_title' => __('Abbey Lee Home Page', 'imgd')
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
-    ,'setting' => 'casino_settings'
-    ,'menu_icon' => plugins_url('casino-plugin/assets/img/casino-icono.png')
-    ,'page_icon' => plugins_url('casino-plugin/assets/img/casino-icono-32.png')
+    ,'setting' => 'abbeylee_settings'
     ,'single_line' => true
     ,'default_tab' => 'Home'
-    ,'save_text' => __('Actualizar','imgd')
+    ,'save_text' => __('Save Settings','imgd')
     );
 
     return $pages;
 }
-*/

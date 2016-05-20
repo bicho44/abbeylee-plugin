@@ -1,19 +1,39 @@
 <?php
 /*
-Title: Paginas
+Title: Home Page Banner
 Order: 10
-Setting: casino_settings
-Tab: Datos
+Setting: abbeylee_settings
+Tab: Home
 */
 
 piklist('field', array(
-    'type' => 'radio'
-,'field' => 'imgd_magic_tabs'
-,'label' => __('Tabs Automáticas', 'imgd')
-,'value' => 'no',
-    'description'=>__('Esta opción transforma las páginas "hijas" en Tabs','imgd')
-,'choices' => array(
-        'si' => __('Si', 'imgd')
-    ,'no' => __('No', 'imgd')
+    'type' => 'text'
+,'field' => 'imgd_banner_text'
+,'value' => 'Save Up to 40% on selected items'
+,'label' => __('Banner Text', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
     )
 ));
+
+piklist('field', array(
+    'type' => 'text'
+,'field' => 'imgd_banner_button'
+,'value' => 'Shop Now!'
+,'label' => __('Banner Button Text', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
+    )
+));
+
+piklist('field', array(
+    'type' => 'text'
+,'field' => 'imgd_banner_url'
+,'value' => ''
+,'label' => __('Banner Button Link', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
+    )
+));
+
+
