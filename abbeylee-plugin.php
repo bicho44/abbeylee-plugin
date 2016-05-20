@@ -62,7 +62,13 @@ function imgd_get_meta_id( $post = null, $meta = 'imgd_image_slideshow' ) {
     return get_post_meta( $post->ID, $meta , true );
 }
 
-
+/**
+ * @param $post
+ * @param string $meta
+ * @param string $thumbsize
+ * @param string $posttype
+ * @return false|string
+ */
 function get_imgd_imagen_home($post, $meta='imgd_slideshow', $thumbsize='thumbnail', $posttype=""){
 
     $imageID=array();
@@ -98,6 +104,24 @@ function get_imgd_imagen_home($post, $meta='imgd_slideshow', $thumbsize='thumbna
     }
 }
 
+
+function get_promo_title($post){
+
+    $post = get_post( $post );
+
+    if ( ! $post ) {
+        return '';
+    }
+
+    $title = get_post_meta( $post->ID, 'imgd_destacado_title', true );
+
+    if (empty($title)){
+        $title = get_the_title($post->ID);
+    }
+
+    return $title;
+    
+}
 
 /**
  * Get terms dropdown
