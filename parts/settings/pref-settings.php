@@ -1,9 +1,11 @@
 <?php
 /*
 Title: Home Page Banner
-Order: 10
 Setting: abbeylee_settings
-Tab: Home
+Tab: Advanced
+
+Order: 20
+Flow: Abbeylee Workflow
 */
 
 piklist('field', array(

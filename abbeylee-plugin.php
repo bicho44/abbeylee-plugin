@@ -162,8 +162,7 @@ function imgd_abbeylee_setting_pages($pages)
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
     ,'setting' => 'abbeylee_settings'
-    ,'single_line' => true
-    ,'default_tab' => 'Home'
+    ,'default_tab' => 'Basic'
     ,'save_text' => __('Save Settings','imgd')
     );
 
