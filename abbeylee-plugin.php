@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: Abbey Lee Plugin
-Plugin URI: http://imgdigital.com.ar/portfolio/projects/abbeylee/
-Description: Este es un Plug-in para el sitio de Abbey Lee
-Version: 1.0
+Plugin URI: http://imgdigital.com.ar/portfolio/projects/abbylee/
+Description: Este es un Plug-in para el sitio de Abby Lee
+Version: 1.1
 Author: Federico Reinoso
 Author URI: http://imgdigital.com.ar
 Text Domain: imgd
@@ -12,7 +12,7 @@ Plugin Type: Piklist
 License: GPL2
 */
 
-define( 'ABBEYLEE_PLUGIN_PATH', plugin_dir_url( __FILE__ ) );
+define( 'ABBYLEE_PLUGIN_PATH', plugin_dir_url( __FILE__ ) );
 
 /**
  * Check if Piklist is activated and installed
@@ -157,8 +157,8 @@ add_filter('piklist_admin_pages', 'imgd_abbeylee_setting_pages');
 function imgd_abbeylee_setting_pages($pages)
 {
     $pages[] = array(
-        'page_title' => __('Abbey Lee Home Page Settings','imgd')
-    ,'menu_title' => __('Abbey Lee Home Page', 'imgd')
+        'page_title' => __('Abby Lee Home Page Settings','imgd')
+    ,'menu_title' => __('Abby Lee Home Page', 'imgd')
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
     ,'setting' => 'abbeylee_settings'
