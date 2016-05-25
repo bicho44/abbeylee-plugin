@@ -1,7 +1,7 @@
 <?php
 /*
 Title: News Section
-Setting: abbeylee_news_settings
+Setting: abbeylee_settings
 
 Order: 30
 Default: true
