@@ -12,8 +12,9 @@ Plugin Type: Piklist
 License: GPL2
 */
 
-define( 'ABBYLEE_PLUGIN_PATH', plugin_dir_url( __FILE__ ) );
+define( 'ABBYLEE_PLUGIN_PATH', basename(dirname(__FILE__)) );
 
+//echo ABBYLEE_PLUGIN_PATH;
 /**
  * Check if Piklist is activated and installed
  */
@@ -22,7 +23,7 @@ function imgd_init_function()
 {
     if(is_admin())
     {
-        include_once(plugin_dir_path(__FILE__).'class-piklist-checker.php');
+        include_once(ABBYLEE_PLUGIN_PATH.'class-piklist-checker.php');
 
         if (!piklist_checker::check(__FILE__))
         {
@@ -35,7 +36,7 @@ function imgd_init_function()
  * Loading Translation
  */
 function imgd_plugin_init() {
-    $plugin_dir = basename(dirname(__FILE__)).'/languages';
+    $plugin_dir = ABBYLEE_PLUGIN_PATH.'/languages';
     //echo '<h1>'.$plugin_dir.'</h1>';
     load_plugin_textdomain( 'imgd', false, $plugin_dir );
 }
@@ -157,14 +158,21 @@ add_filter('piklist_admin_pages', 'imgd_abbeylee_setting_pages');
 function imgd_abbeylee_setting_pages($pages)
 {
     $pages[] = array(
-        'page_title' => __('Abby Lee Home Page Settings','imgd')
-    ,'menu_title' => __('Abby Lee Home Page', 'imgd')
+        'page_title' => __('Abby Lee Page Settings','imgd')
+    ,'menu_title' => __('Abby Lee Page', 'imgd')
     ,'capability' => 'manage_options'
     ,'menu_slug' => 'custom_settings'
     ,'setting' => 'abbeylee_settings'
+    ,'menu_icon' => 'dashicons-universal-access-alt'
+    ,'page_icon' => 'dashicons-universal-access-alt'
     ,'default_tab' => 'Basic'
     ,'save_text' => __('Save Settings','imgd')
     );
 
     return $pages;
 }
+
+/**
+ * Load IMGD Framework compatibility file.
+ */
+require plugin_dir_path(__FILE__).'/inc/imgd_slider.php';
