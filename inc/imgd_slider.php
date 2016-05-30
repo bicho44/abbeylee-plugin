@@ -13,16 +13,17 @@ if(! function_exists('get_imgd_rev_slider')){
 
         $html='';
 
-        $html.='<!--'.$shortcode.'_slider-->
+        /*$html.='<!--'.$shortcode.'_slider-->
 <div class="full_box home_slider">
 
     <!--slider-->
     <div class="slider">
         <div class="flexslider" id="'.$shortcode.'_slider">';
+        */
 if (function_exists('putRevSlider')) {
     putRevSlider("$shortcode", "$location");
 }
-        $html.='</div>
+      /*$html.='</div>
         </div>
         <!--/slider-->
         <!--slider_text
@@ -33,7 +34,7 @@ if (function_exists('putRevSlider')) {
 </div> -->
 <!--/slider_text-->
 </div>
-<!--/'.$shortcode.'_slider-->';
+<!--/'.$shortcode.'_slider-->';*/
 
 return $html;
 
