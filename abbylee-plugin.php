@@ -12,7 +12,8 @@ Plugin Type: Piklist
 License: GPL2
 */
 
-define( 'ABBYLEE_PLUGIN_PATH', basename(dirname(__FILE__)) );
+
+//define( 'ABBYLEE_PLUGIN_PATH', basename(dirname(__FILE__)) );
 
 //echo ABBYLEE_PLUGIN_PATH;
 /**
@@ -23,7 +24,7 @@ function imgd_init_function()
 {
     if(is_admin())
     {
-        include_once(ABBYLEE_PLUGIN_PATH.'class-piklist-checker.php');
+        include_once(plugin_dir_path(__FILE__).'class-piklist-checker.php');
 
         if (!piklist_checker::check(__FILE__))
         {
@@ -36,7 +37,7 @@ function imgd_init_function()
  * Loading Translation
  */
 function imgd_plugin_init() {
-    $plugin_dir = ABBYLEE_PLUGIN_PATH.'/languages';
+    $plugin_dir = basename(dirname(__FILE__)).'/languages';
     //echo '<h1>'.$plugin_dir.'</h1>';
     load_plugin_textdomain( 'imgd', false, $plugin_dir );
 }
@@ -175,4 +176,4 @@ function imgd_abbeylee_setting_pages($pages)
 /**
  * Load IMGD Framework compatibility file.
  */
-require plugin_dir_path(__FILE__).'/inc/imgd_slider.php';
+//require plugin_dir_path(__FILE__).'/inc/imgd_slider.php';
