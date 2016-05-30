@@ -25,12 +25,12 @@ if (function_exists('putRevSlider')) {
         $html.='</div>
         </div>
         <!--/slider-->
-        <!--slider_text-->
+        <!--slider_text
         
 <div class="slider_text">
     <div class="center_box">
     </div>
-</div>
+</div> -->
 <!--/slider_text-->
 </div>
 <!--/'.$shortcode.'_slider-->';

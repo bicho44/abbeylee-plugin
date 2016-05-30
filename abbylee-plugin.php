@@ -3,7 +3,7 @@
 Plugin Name: Abbey Lee Plugin
 Plugin URI: http://imgdigital.com.ar/portfolio/projects/abbylee/
 Description: Este es un Plug-in para el sitio de Abby Lee
-Version: 1.15
+Version: 1.18 
 Author: Federico Reinoso
 Author URI: http://imgdigital.com.ar
 Text Domain: imgd
