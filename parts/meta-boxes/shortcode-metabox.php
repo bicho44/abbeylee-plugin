@@ -7,6 +7,8 @@ Order: 10
 Collapse: false
 Context: side
 
+Template: page-home-imgd
+
 Extend: pageparentdiv
 Extend Method: after
 */
