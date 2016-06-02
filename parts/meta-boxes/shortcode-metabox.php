@@ -7,7 +7,7 @@ Order: 10
 Collapse: false
 Context: side
 
-Template: page-home-imgd
+Template: page-con-sliders
 
 Extend: pageparentdiv
 Extend Method: after
