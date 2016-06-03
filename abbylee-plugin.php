@@ -3,7 +3,7 @@
 Plugin Name: Abbey Lee Plugin
 Plugin URI: http://imgdigital.com.ar/portfolio/projects/abbylee/
 Description: Este es un Plug-in para el sitio de Abby Lee
-Version: 1.20
+Version: 1.22
 Author: Federico Reinoso
 Author URI: http://imgdigital.com.ar
 Text Domain: imgd
@@ -13,9 +13,9 @@ License: GPL2
 */
 
 
-//define( 'ABBYLEE_PLUGIN_PATH', basename(dirname(__FILE__)) );
+define( 'IMGD_PLUGIN_PATH', plugin_dir_url( __FILE__ ) );
 
-//echo ABBYLEE_PLUGIN_PATH;
+//echo IMGD_PLUGIN_PATH;
 /**
  * Check if Piklist is activated and installed
  */
@@ -172,8 +172,16 @@ function imgd_abbeylee_setting_pages($pages)
 
     return $pages;
 }
+/**
+ * Load IMGD Framework compatibility file.
+ */
+require plugin_dir_path(__FILE__).'/inc/imgd_functions.php';
+
+imgd_setting_css();
 
 /**
  * Load IMGD Framework compatibility file.
  */
 require plugin_dir_path(__FILE__).'/inc/imgd_slider.php';
+
+
