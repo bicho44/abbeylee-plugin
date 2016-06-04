@@ -1,11 +1,11 @@
 <?php
 /*
 Title: Home Page Settings
-Setting: abbeylee_settings
+Setting: abbylee_settings
 Tab: Advanced
 
 Order: 20
-Flow: Abbeylee Workflow
+Flow: Abbylee Settings
 */
 
 

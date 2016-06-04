@@ -162,8 +162,8 @@ function imgd_abbeylee_setting_pages($pages)
         'page_title' => __('Abby Lee Page Settings','imgd')
     ,'menu_title' => __('Abby Lee Page', 'imgd')
     ,'capability' => 'manage_options'
-    ,'menu_slug' => 'custom_settings'
-    ,'setting' => 'abbeylee_settings'
+    ,'menu_slug' => 'abbylee_settings'
+    ,'setting' => 'abbylee_settings'
     ,'menu_icon' => 'dashicons-universal-access-alt'
     ,'page_icon' => 'dashicons-universal-access-alt'
     ,'default_tab' => 'Basic'

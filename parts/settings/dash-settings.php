@@ -1,11 +1,12 @@
 <?php
 /*
 Title: News Section
-Setting: abbeylee_settings
+Setting: abbylee_settings
 
 Order: 30
 Default: true
-Flow: Abbeylee Workflow
+Tab: News
+Flow: Abbylee Settings
 */
 
 
