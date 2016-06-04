@@ -2,9 +2,9 @@
 /*
 Title: Home Page Settings
 Setting: abbylee_settings
-Tab: Advanced
-
-Order: 20
+Tab: Home
+Order: 10
+Default: True
 Flow: Abbylee Settings
 */
 

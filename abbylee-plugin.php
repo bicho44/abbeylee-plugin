@@ -166,7 +166,7 @@ function imgd_abbeylee_setting_pages($pages)
     ,'setting' => 'abbylee_settings'
     ,'menu_icon' => 'dashicons-universal-access-alt'
     ,'page_icon' => 'dashicons-universal-access-alt'
-    ,'default_tab' => 'Basic'
+    ,'default_tab' => 'Home'
     ,'save_text' => __('Save Settings','imgd')
     );
 

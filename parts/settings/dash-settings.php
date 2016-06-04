@@ -3,8 +3,7 @@
 Title: News Section
 Setting: abbylee_settings
 
-Order: 30
-Default: true
+Order: 20
 Tab: News
 Flow: Abbylee Settings
 */
