@@ -3,37 +3,41 @@
 Title: News Section
 Setting: abbylee_settings
 
-Order: 20
+Order: 40
 Tab: News
 Flow: Abbylee Settings
 */
 
-
 piklist('field', array(
-    'type' => 'text'
-,'field' => 'imgd_news_title'
-,'value' => 'Lasted News'
-,'label' => __('News Column Title', 'imgd')
-,'attributes' => array(
-        'class' => 'regular-text'
-    )
-));
-
-piklist('field', array(
-    'type' => 'text'
-,'field' => 'imgd_news_link'
-,'value' => '#'
-,'label' => __('News Column Title Link', 'imgd')
-,'attributes' => array(
-        'class' => 'regular-text'
-    )
-));
+    'type' => 'group'
+,'field' => 'new_group'
+,'label' => __('News Setting', 'imgd')
+,'list' => false
+,'description' => __('Titles You use in the news section.', 'imgd')
+,'fields' =>  array (array(
+        'type' => 'text'
+        ,'field' => 'imgd_news_title'
+        ,'value' => 'Lasted News'
+        ,'label' => __('Column Title', 'imgd')
+        ,'attributes' => array(
+                'class' => 'regular-text'
+            )
+        ), array(
+            'type' => 'text'
+        ,'field' => 'imgd_news_link'
+        ,'value' => ''
+        ,'label' => __('Column Title Link', 'imgd')
+        ,'attributes' => array(
+                'class' => 'regular-text'
+            , 'placeholder'=>__('Type the URL', 'imgd')
+            )
+    ))));
 
 piklist('field', array(
     'type' => 'text'
 ,'field' => 'imgd_news_title2'
 ,'value' => 'Instagram'
-,'label' => __('Insta Column Title', 'imgd')
+,'label' => __('Social Column Title', 'imgd')
 ,'attributes' => array(
         'class' => 'regular-text'
     )
@@ -42,9 +46,21 @@ piklist('field', array(
 piklist('field', array(
     'type' => 'text'
 ,'field' => 'imgd_news_link2'
-,'value' => '#'
-,'label' => __('Insta Column Title Link', 'imgd')
+,'value' => ''
+,'label' => __('Social Column Title Link', 'imgd')
 ,'attributes' => array(
         'class' => 'regular-text'
+        , 'placeholder'=>__('Type the URL', 'imgd')
+    )
+));
+
+piklist('field', array(
+    'type' => 'text'
+,'field' => 'imgd_news_shortcode'
+,'value' => ''
+,'label' => __('Shortcode', 'imgd')
+,'attributes' => array(
+        'class' => 'regular-text'
+    , 'placeholder'=>__('[ISW id=XXXX]', 'imgd')
     )
 ));

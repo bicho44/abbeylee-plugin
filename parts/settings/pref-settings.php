@@ -3,7 +3,7 @@
 Title: Home Page Settings
 Setting: abbylee_settings
 Tab: Home
-Order: 10
+Order: 50
 Default: True
 Flow: Abbylee Settings
 */
@@ -24,9 +24,9 @@ piklist('field', array(
 piklist('field', array(
     'type' => 'group'
     ,'field' => 'banner_group'
-    ,'label' => __('Banners Setting', 'imgd')
+    ,'label' => __('Store Setting', 'imgd')
     ,'list' => false
-    ,'description' => __('Insert here the Home Page banner data.', 'imgd')
+    ,'description' => __('Insert here the Store banner data.', 'imgd')
     ,'fields' => array(
         array(
             'type' => 'text'
