@@ -13,26 +13,49 @@ piklist('field', array(
     ,'field' => 'gallery_group'
     ,'label' => __('Gallery Setting', 'imgd')
     ,'list' => false
+,'columns' => 6
     ,'description' => __('Image Size you use in the galleries.', 'imgd')
     ,'fields' => array(
         array(
             'type' => 'number'
-            ,'field' => 'imgd_image_thumb'
-            ,'label' => __('Thumbnail Size', 'imgd')
+            ,'field' => 'imgd_image_thumb_w'
+            ,'label' => __('Thumbnail Width', 'imgd')
+        ,'columns' => 6
             ,'attributes' => array(
                 'class' => 'small-text'
             ,'placeholder'=>'320'
             )
         )
+        ,array(
+            'type' => 'number'
+        ,'field' => 'imgd_image_thumb_h'
+        ,'label' => __('Thumbnail Height', 'imgd')
+        ,'columns' => 6
+        ,'attributes' => array(
+                'class' => 'small-text'
+            ,'placeholder'=>'240'
+            )
+        )
     , array(
             'type' => 'number'
-            ,'field' => 'imgd_image_big'
-            ,'label' => __('Image Size', 'imgd')
+            ,'field' => 'imgd_image_big_w'
+            ,'label' => __('Image Width', 'imgd')
+        ,'columns' => 6
             ,'attributes' => array(
                     'class' => 'small-text'
             ,'placeholder'=>'800'
                 )
             )
+    , array(
+            'type' => 'number'
+        ,'field' => 'imgd_image_big_h'
+        ,'label' => __('Image Height', 'imgd')
+        ,'columns' => 6
+        ,'attributes' => array(
+                'class' => 'small-text'
+            ,'placeholder'=>'600'
+            )
+        )
 
     )
     ));

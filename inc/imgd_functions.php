@@ -6,6 +6,9 @@
  * Time: 8:06 PM
  */
 
+/**
+ * Enqueue the Admin CSS
+ */
 function imgd_setting_css()
 {
     wp_register_style('imgd-settings-css', plugins_url( '../assets/css/abby_settings_admin.css', __FILE__ ));
@@ -34,8 +37,11 @@ function imgd_get_meta_id( $post = null, $meta = 'imgd_image_slideshow' ) {
 }
 
 /**
+ * Get Image Home Page
+ * Returns an IMAGE URL if exist.
+ *
  * @param $post
- * @param string $meta
+ * @param string $meta Post Meta for the IMAG
  * @param string $thumbsize
  * @param string $posttype
  * @return false|string
@@ -46,6 +52,7 @@ function get_imgd_imagen_home($post, $meta='imgd_slideshow', $thumbsize='thumbna
     $path = "";
 
     if ($meta=='') $meta='imgd_slideshow';
+    if ($thumbsize=='') $meta='thumbnail';
 
     $post = get_post( $post );
 
@@ -75,7 +82,13 @@ function get_imgd_imagen_home($post, $meta='imgd_slideshow', $thumbsize='thumbna
     }
 }
 
-
+/**
+ * Get Promo Title
+ * Retrive the Promotional Title if is in use. If not return the Post Title.
+ *
+ * @param $post The Post
+ * @return mixed|string Title Promotional or Post Title
+ */
 function get_promo_title($post){
 
     $post = get_post( $post );
@@ -91,5 +104,19 @@ function get_promo_title($post){
     }
 
     return $title;
+
+}
+
+function set_thumbanils_sizes(){
+    $th = 320;
+    $fl = 800;
+    $settings = get_option('abbylee_settings');
+
+    $gr = $settings['gallery_group'];
+    $th = $gr['imgd_image_thumb'];
+    $fl = $gr['imgd_image_big'];
+
+    add_image_size('full-gallery', $fl, 480, true);
+    add_image_size('thumb-gallery', $th, 300, true);
 
 }

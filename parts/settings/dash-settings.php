@@ -13,6 +13,7 @@ piklist('field', array(
 ,'field' => 'new_group'
 ,'label' => __('News Setting', 'imgd')
 ,'list' => false
+    ,'columns'=> 6
 ,'description' => __('Titles You use in the news section.', 'imgd')
 ,'fields' =>  array (array(
         'type' => 'text'
@@ -34,6 +35,15 @@ piklist('field', array(
     ))));
 
 piklist('field', array(
+    'type' => 'group'
+,'field' => 'insta_group'
+,'label' => __('Instagram Setting', 'imgd')
+,'list' => false
+,'columns'=> 6
+,'description' => __('Titles You use in the news section.', 'imgd')
+,'fields' =>  array (
+
+ array(
     'type' => 'text'
 ,'field' => 'imgd_news_title2'
 ,'value' => 'Instagram'
@@ -41,9 +51,8 @@ piklist('field', array(
 ,'attributes' => array(
         'class' => 'regular-text'
     )
-));
-
-piklist('field', array(
+)
+, array(
     'type' => 'text'
 ,'field' => 'imgd_news_link2'
 ,'value' => ''
@@ -52,9 +61,8 @@ piklist('field', array(
         'class' => 'regular-text'
         , 'placeholder'=>__('Type the URL', 'imgd')
     )
-));
-
-piklist('field', array(
+)
+    , array(
     'type' => 'text'
 ,'field' => 'imgd_news_shortcode'
 ,'value' => ''
@@ -63,4 +71,4 @@ piklist('field', array(
         'class' => 'regular-text'
     , 'placeholder'=>__('[ISW id=XXXX]', 'imgd')
     )
-));
+))));
