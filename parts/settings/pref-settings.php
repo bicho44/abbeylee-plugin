@@ -3,7 +3,7 @@
 Title: Home Page Settings
 Setting: abbylee_settings
 Tab: Home
-Order: 50
+Order: 20
 Default: True
 Flow: Abbylee Settings
 */
