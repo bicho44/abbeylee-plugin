@@ -10,7 +10,7 @@ Flow: Abbylee Settings
 
 piklist('field', array(
     'type' => 'group'
-,'field' => 'new_group'
+,'field' => 'news_group'
 ,'label' => __('News Setting', 'imgd')
 ,'list' => false
     ,'columns'=> 6
