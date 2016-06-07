@@ -34,7 +34,7 @@ piklist('field', array(
             )
     ))));
 
-piklist('field', array(
+/*piklist('field', array(
     'type' => 'group'
 ,'field' => 'insta_group'
 ,'label' => __('Instagram Setting', 'imgd')
@@ -71,4 +71,4 @@ piklist('field', array(
         'class' => 'regular-text'
     , 'placeholder'=>__('[ISW id=XXXX]', 'imgd')
     )
-))));
+))));*/
