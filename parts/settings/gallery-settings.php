@@ -63,5 +63,5 @@ piklist('field', array(
 
 If (is_admin()){
     $abby_settings = get_option('abbylee_settings');
-    piklist::pre($abby_settings);
+   // piklist::pre($abby_settings);
 }
