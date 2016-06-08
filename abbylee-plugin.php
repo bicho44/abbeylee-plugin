@@ -108,4 +108,4 @@ require plugin_dir_path(__FILE__).'/inc/imgd_slider.php';
 /**
  * Load IMGD Framework compatibility file.
  */
-require plugin_dir_path(__FILE__).'/inc/imgd_sort_columns.php';
+//require plugin_dir_path(__FILE__).'/inc/imgd_sort_columns.php';
