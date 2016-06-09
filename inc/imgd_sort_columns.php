@@ -6,6 +6,9 @@
  * User: bicho44
  * Date: 6/8/16
  * Time: 10:43 AM
+ *
+ * @todo Hay problemas con el ordenamiento que filtra y no ordena. Ver que onda más adelante
+ *
  */
 
 // Register the column
@@ -21,14 +24,14 @@ function destacado_column_display( $column_name, $post_id ) {
     if ( 'imgd_destacado' != $column_name )
         return;
 
-    $destacado = '<span class="dashicons dashicons-no-alt"></span>';
+    $destacado = '<span class="dashicons dashicons-no-alt cancel"></span>';
 
     $esdestacado = get_post_meta($post_id, 'imgd_destacado', true);
 
     if ($esdestacado=='1' || $esdestacado=='yes'  ) {
         If ($esdestacado =='1') update_post_meta($post_id, 'imgd_destacado', 'yes');
-        
-        $destacado = '<span class="dashicons dashicons-yes" ></span>';
+
+        $destacado = '<span class="dashicons dashicons-yes accept" ></span>';
     }
 
     echo $destacado;

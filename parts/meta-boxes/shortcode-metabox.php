@@ -16,11 +16,10 @@ Extend Method: after
 
 piklist('field', array(
     'type' => 'text'
-,'field' => 'imgd_revolution_shortcode'
-,'label' => __('Revolution ShortCode', 'imgd')
-,'description' => __('Please enter the Revolution shortcode','imgd')
-,'attributes' => array(
-    'placeholder' => 'home'
-    )
-    
+    ,'field' => 'imgd_revolution_shortcode'
+    ,'label' => __('Revolution ShortCode', 'imgd')
+    ,'description' => __('Please enter the Revolution shortcode','imgd')
+    ,'attributes' => array(
+        'placeholder' => 'home'
+        )
 ));

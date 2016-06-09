@@ -107,16 +107,89 @@ function get_promo_title($post){
 
 }
 
-function set_thumbanils_sizes(){
-    $th = 320;
-    $fl = 800;
+// check if the options are different from the saved
+/**
+ * @todo Make it work because right now is bogus
+ */
+function imgd_set_thumbanils_sizes(){
+    $thw = 320;
+    $thh = 240;
+    $flw = 800;
+    $flh = 600;
+
     $settings = get_option('abbylee_settings');
 
     $gr = $settings['gallery_group'];
-    $th = $gr['imgd_image_thumb'];
-    $fl = $gr['imgd_image_big'];
 
-    add_image_size('full-gallery', $fl, 480, true);
-    add_image_size('thumb-gallery', $th, 300, true);
+    $thw = $gr['imgd_image_thumb_w'];
+    $thh = $gr['imgd_image_thumb_w'];
+    $flw = $gr['imgd_image_big_w'];
+    $flh = $gr['imgd_image_big_h'];
 
+    add_image_size('full-gallery', $flw, $flh, true);
+    add_image_size('thumb-gallery', $thw, $thh, true);
+}
+
+add_image_size('full-gallery', 800, 600, true);
+add_image_size('thumb-gallery', 150, 150, true);
+
+
+function imgd_check_gallery($postid, $metadata = 'imgd_gallery_images' ){
+
+    //$post = get_post( $post );
+
+    if ( ! $postid ) {
+        return '';
+    }
+
+    $image_ids = get_post_meta($postid, $metadata);
+
+    if (!$image_ids) return false;
+
+    return $image_ids;
+}
+
+function imgd_get_images_from_gallery($image_ids=array()){
+
+    if (empty($image_ids))
+        return '';
+
+    $data = '<div  id="gallery-page" class="gallery">' ;
+    foreach ($image_ids as $image)
+    {
+        $myupload = get_post($image);
+        $title = $myupload->post_title;
+        $description = $myupload->post_content;
+        $caption = $myupload->post_excerpt;
+
+
+        $data .= '<dl class="gallery-item">
+			<dt class="gallery-icon">';
+
+        $big = wp_get_attachment_image_src( $image, 'full-gallery' );
+
+        $data .= '<a href="'.$big[0].'" >';
+
+        $data .= wp_get_attachment_image( $image, 'thumb-gallery' );
+
+        //$data .= '<img src="' . wp_get_attachment_url($image) . '" alt="'.$title.'" />';
+        /*<a href="http://wp.loc/wp-content/uploads/2016/05/IMG_9356.jpg">
+                <img src="http://wp.loc/wp-content/uploads/2016/05/IMG_9356-169x300.jpg"
+        class="attachment-medium size-medium" alt="IMG_9356"
+        srcset="http://wp.loc/wp-content/uploads/2016/05/IMG_9356-169x300.jpg 169w, 
+        http://wp.loc/wp-content/uploads/2016/05/IMG_9356-768x1367.jpg 768w, 
+        http://wp.loc/wp-content/uploads/2016/05/IMG_9356-575x1024.jpg 575w, 
+        http://wp.loc/wp-content/uploads/2016/05/IMG_9356-253x450.jpg 253w, 
+        http://wp.loc/wp-content/uploads/2016/05/IMG_9356-197x350.jpg 197w"
+        sizes="(max-width: 169px) 100vw, 169px" height="300" width="169">
+        </a>*/
+        $data .='</a>';
+          $data .= '	</dt>
+        </dl>';
+
+    }
+    $data .= '<br style="clear: both">
+		</div>';
+
+    return $data;
 }
